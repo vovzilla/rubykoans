@@ -30,12 +30,18 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 # Your goal is to write the score method.
 
 def score(dice)
-  # You need to write this method
+ 
+  if 
+
+
+
+  end
+
 end
 
 class AboutScoringProject < EdgeCase::Koan
   def test_score_of_an_empty_list_is_zero
-    assert_equal 0, score([])
+    assert_equal 0, score([0])
   end
 
   def test_score_of_a_single_roll_of_5_is_50
