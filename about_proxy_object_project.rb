@@ -7,7 +7,7 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 # object.  Any messages sent to the proxy object should be forwarded
 # to the target object.  As each message is sent, the proxy should
 # record the name of the method sent.
-#
+#mesag
 # The proxy class is started for you.  You will need to add a method
 # missing handler and any other supporting methods.  The specification
 # of the Proxy class is given in the AboutProxyObjectProject koan.
@@ -15,10 +15,21 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 class Proxy
   def initialize(target_object)
     @object = target_object
+    @messages = []
     # ADD MORE CODE HERE
   end
-
-  # WRITE CODE HERE
+  def messages
+    @messages = messages
+  end
+  def method_missing?(method)
+      @messages[method] += 1
+  end
+  def called?(method)
+    @messages.include?(method)    
+  end
+  def number_of_times_called(method)
+    @messages[method]
+  end
 end
 
 # The proxy object should pass the following Koan:
