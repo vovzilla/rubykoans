@@ -30,12 +30,13 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 # Your goal is to write the score method.
 
 def score(dice)
- 
-  if 
 
-
-
-  end
+  sum = 0
+  sum += 1000 if dice.count(1) >= 3
+  2.upto(6).each { |n| sum += (n * 100) if dice.count(n) >= 3 }
+  sum += (dice.count(1) % 3) * 100
+  sum += (dice.count(5) % 3) * 50
+#original code by @mipadi
 
 end
 
